@@ -104,8 +104,8 @@ function button(label, handler, cls = "secondary") {
 const projectFields = [
   ["Project title", "title"],
   ["Description", "description", true],
-  ["Problem solved", "problem", true],
-  ["Tools used", "tools"],
+  ["Fault, challenge, or problem investigated", "problem", true],
+  ["Equipment & tools used", "tools"],
   ["Results (use only verified outcomes)", "results", true],
   ["Image URL (HTTPS or media library path)", "image"],
   ["Project link (HTTPS)", "link"],
@@ -142,7 +142,7 @@ function render() {
       grid.append(field(label, key, data, multi));
     const skillObj = { skills: data.skills.join("\n") };
     const skills = field(
-      "Skills & tools — one per line",
+      "Technical skills & equipment — one per line",
       "skills",
       skillObj,
       true,
@@ -162,7 +162,12 @@ function render() {
     const list = data[tab],
       fields = tab === "projects" ? projectFields : certFields;
     root.append(
-      el("h2", tab === "projects" ? "Show the work." : "Share your learning."),
+      el(
+        "h2",
+        tab === "projects"
+          ? "Document the technical work."
+          : "Share your learning.",
+      ),
       el(
         "p",
         "Order items with the arrows. Only items marked “Include on public site” appear after publishing.",

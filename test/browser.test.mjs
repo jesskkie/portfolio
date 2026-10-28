@@ -57,7 +57,7 @@ test("browser: responsive public site and full dashboard publishing flow", async
       await page.setViewportSize({ width, height });
       await page.goto(base);
       await page.getByText("Jesse George", { exact: true }).first().waitFor();
-      await page.getByText("Good work deserves a good story.").waitFor();
+      await page.getByText("Real equipment. Real problem-solving.").waitFor();
       assert.ok(
         await page.evaluate(
           () => document.documentElement.scrollWidth <= innerWidth,

@@ -40,11 +40,11 @@ async function load() {
   if (!projects.length) {
     const card = el("div", null, "empty-state");
     card.append(
-      el("span", "[ YOUR NEXT CASE STUDY ]", "eyebrow"),
-      el("h3", "Good work deserves a good story."),
+      el("span", "[ TECHNICAL PROJECTS / COMING SOON ]", "eyebrow"),
+      el("h3", "Real equipment. Real problem-solving."),
       el(
         "p",
-        "Project details are coming soon. This space will feature real automation projects, tools, and results.",
+        "This space is ready for your actual work: the equipment involved, the problem investigated, the controls or tools used, and the outcome. No projects have been listed yet.",
         "muted",
       ),
     );
@@ -65,7 +65,7 @@ async function load() {
       );
     const info = el("div", null, "project-info");
     info.append(
-      el("p", p.tools || "Tools to be added", "eyebrow"),
+      el("p", p.tools || "Equipment & tools to be added", "eyebrow"),
       el("h3", p.title),
       el("p", p.description, "muted"),
     );
@@ -78,9 +78,9 @@ async function load() {
       );
       for (const [title, value] of [
         ["Overview", p.description],
-        ["The challenge", p.problem],
-        ["Tools used", p.tools],
-        ["The outcome", p.results],
+        ["Problem investigated", p.problem],
+        ["Equipment & tools", p.tools],
+        ["Results & observations", p.results],
       ]) {
         details.append(
           el("h3", title),

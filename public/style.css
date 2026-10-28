@@ -1,11 +1,11 @@
 :root {
-  --bg: #101b24;
-  --panel: #172630;
-  --line: #2a3a44;
-  --text: #f0f3ee;
-  --muted: #a3b0b7;
-  --accent: #b8ebbd;
-  --dark: #10251b;
+  --bg: #171a1d;
+  --panel: #22272b;
+  --line: #3b4349;
+  --text: #f2f0e9;
+  --muted: #b1b9be;
+  --accent: #ffc071;
+  --dark: #20180d;
 }
 * {
   box-sizing: border-box;
@@ -19,7 +19,7 @@ body {
   background: var(--bg);
   color: var(--text);
   font:
-    16px/1.65 "DM Sans",
+    16px/1.65 "Segoe UI",
     Arial,
     sans-serif;
 }
@@ -27,13 +27,13 @@ h1,
 h2,
 h3,
 .brand {
-  font-family: Manrope, Arial, sans-serif;
+  font-family: "Arial Narrow", "Segoe UI", Arial, sans-serif;
   line-height: 1.15;
   letter-spacing: -0.045em;
 }
 h1 {
-  font-size: clamp(42px, 5.6vw, 82px);
-  font-weight: 500;
+  font-size: clamp(39px, 4.7vw, 68px);
+  font-weight: 700;
   margin: 22px 0 30px;
 }
 h2 {
@@ -101,11 +101,16 @@ header {
   font-size: 12px;
 }
 .mark {
-  font-size: 30px;
-  letter-spacing: -5px;
-}
-.mark span {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border: 1px solid var(--accent);
   color: var(--accent);
+  font:
+    700 16px "Courier New",
+    monospace;
+  letter-spacing: -0.04em;
 }
 nav {
   display: flex;
@@ -120,8 +125,8 @@ section {
 }
 .hero {
   display: grid;
-  grid-template-columns: 1.4fr 1fr;
-  gap: 65px;
+  grid-template-columns: 1fr 1.05fr;
+  gap: 48px;
   align-items: center;
   padding: 80px 0 65px;
 }
@@ -166,12 +171,12 @@ section {
   background: var(--accent);
   color: var(--dark);
   border: 1px solid var(--accent);
-  border-radius: 4px;
+  border-radius: 2px;
   font-weight: 600;
   font-size: 13px;
 }
 .button:hover {
-  background: #d4f8d7;
+  background: #ffdaa6;
   color: var(--dark);
 }
 .text-link {
@@ -186,58 +191,62 @@ section {
   font-size: 10px;
   color: var(--muted);
 }
-.system-art {
-  background:
-    radial-gradient(ellipse at center, #24403977, transparent 65%),
-    repeating-linear-gradient(0deg, transparent 0 27px, #ffffff04 28px),
-    repeating-linear-gradient(90deg, transparent 0 27px, #ffffff04 28px);
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  padding: 24px 30px;
-  transform: rotate(-2deg);
+.control-figure {
+  margin: 0;
+  min-width: 0;
+  border: 1px solid #586068;
+  background: #1d2327;
+  box-shadow: 12px 12px 0 #0d101233;
+  position: relative;
 }
-.art-top {
+.control-figure::before,
+.control-figure::after {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border: 2px solid var(--accent);
+  pointer-events: none;
+}
+.control-figure::before {
+  top: -2px;
+  left: -2px;
+  border-right: 0;
+  border-bottom: 0;
+}
+.control-figure::after {
+  bottom: -2px;
+  right: -2px;
+  border-left: 0;
+  border-top: 0;
+}
+.drawing-title,
+.control-figure figcaption {
   display: flex;
   justify-content: space-between;
-  font: 9px monospace;
-  letter-spacing: 0.1em;
-  color: var(--muted);
-  margin-bottom: 36px;
+  gap: 14px;
+  padding: 15px 18px;
+  font:
+    10px/1.5 "Courier New",
+    monospace;
+  letter-spacing: 0.07em;
 }
-.node {
-  background: var(--panel);
-  border: 1px solid #3a4a50;
-  border-radius: 7px;
-  padding: 18px;
-  display: grid;
-  grid-template-columns: 20px 1fr;
-  column-gap: 12px;
-  font-size: 13px;
-  box-shadow: 0 8px 18px #0002;
-}
-.node small {
-  grid-column: 2;
-  color: var(--muted);
-  font: 8px monospace;
-  letter-spacing: 0.1em;
-  margin-top: 8px;
-}
-.node.active {
-  border-color: #b8ebbd88;
-  background: #223b32;
+.drawing-title {
+  border-bottom: 1px solid var(--line);
   color: var(--accent);
 }
-.connector {
-  text-align: center;
-  color: #658f78;
-  height: 36px;
-}
-.art-bottom {
-  text-align: center;
-  font: 8px monospace;
-  letter-spacing: 0.1em;
+.drawing-index {
   color: var(--muted);
-  margin: 34px 0 10px;
+}
+.control-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.control-figure figcaption {
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 9px;
 }
 .principles {
   display: flex;
@@ -249,7 +258,7 @@ section {
   font-size: 12px;
 }
 .principles span:before {
-  content: "✳";
+  content: "+";
   color: var(--accent);
   margin-right: 14px;
 }
@@ -269,10 +278,10 @@ section {
 }
 .empty-state {
   border: 1px dashed #46565e;
-  border-radius: 6px;
+  border-radius: 3px;
   padding: 36px;
   grid-column: 1/-1;
-  background: linear-gradient(120deg, #1c2d35, #122029);
+  background: linear-gradient(120deg, #262c30, #1b1f23);
 }
 .empty-state h3 {
   font-size: 27px;
@@ -283,18 +292,20 @@ section {
 .project-card {
   background: var(--panel);
   border: 1px solid var(--line);
-  border-radius: 8px;
+  border-radius: 3px;
   overflow: hidden;
 }
 .project-visual {
   height: 240px;
-  background: linear-gradient(135deg, #29473c, #172931);
+  background: linear-gradient(135deg, #343b3e, #20272b);
   display: grid;
   place-items: center;
 }
 .project-number {
-  font: 80px Manrope;
-  color: #b8ebbd66;
+  font:
+    700 80px "Courier New",
+    monospace;
+  color: #ffc07166;
 }
 .project-visual img {
   width: 100%;
@@ -335,11 +346,11 @@ section {
   flex-wrap: wrap;
 }
 .tag {
-  border: 1px solid #43544e;
+  border: 1px solid #5e666b;
   padding: 5px 13px;
-  border-radius: 4px;
+  border-radius: 2px;
   font-size: 12px;
-  color: #c1d9c7;
+  color: #ded8ca;
 }
 .cert-row {
   display: flex;
@@ -364,7 +375,7 @@ section {
 }
 .contact-section {
   border-top: 1px solid var(--line);
-  background: radial-gradient(ellipse at right, #29483855, transparent 60%);
+  background: radial-gradient(ellipse at right, #b5771733, transparent 60%);
 }
 .contact-section h2 {
   font-size: clamp(40px, 5vw, 68px);
@@ -386,7 +397,7 @@ dialog {
   background: var(--panel);
   color: var(--text);
   border: 1px solid var(--line);
-  border-radius: 8px;
+  border-radius: 3px;
   padding: 32px;
 }
 dialog::backdrop {
@@ -397,7 +408,7 @@ dialog p {
 }
 dialog img {
   max-width: 100%;
-  border-radius: 6px;
+  border-radius: 3px;
 }
 dialog button {
   float: right;
@@ -407,7 +418,7 @@ dialog button {
   background: transparent;
   color: var(--text);
   border: 1px solid #64777f;
-  border-radius: 4px;
+  border-radius: 2px;
   font-size: 13px;
 }
 .notice {
@@ -479,10 +490,10 @@ dialog button {
 }
 .field input,
 .field textarea {
-  background: #0d171e;
+  background: #14181b;
   border: 1px solid #43535e;
   color: var(--text);
-  border-radius: 4px;
+  border-radius: 2px;
   padding: 11px;
   width: 100%;
 }
@@ -496,7 +507,7 @@ dialog button {
 .editor-card {
   padding: 24px;
   border: 1px solid var(--line);
-  border-radius: 7px;
+  border-radius: 3px;
   margin: 20px 0;
   background: var(--panel);
 }
@@ -517,7 +528,7 @@ dialog button {
   padding: 32px;
   background: var(--panel);
   border: 1px solid var(--line);
-  border-radius: 8px;
+  border-radius: 3px;
 }
 .login-card h1 {
   font-size: 30px;
@@ -526,8 +537,8 @@ dialog button {
   position: sticky;
   top: 0;
   padding: 12px 16px;
-  background: #233b32;
-  border-radius: 4px;
+  background: #353226;
+  border-radius: 2px;
   font-size: 13px;
   z-index: 3;
   white-space: pre-line;
@@ -571,12 +582,11 @@ dialog button {
     gap: 25px;
     padding-top: 45px;
   }
-  .system-art {
-    max-width: 430px;
+  .control-figure {
     width: 100%;
+    max-width: 560px;
     justify-self: center;
-    transform: none;
-    margin-top: 10px;
+    margin: 15px 0;
   }
   .principles {
     font-size: 10px;
@@ -632,4 +642,77 @@ dialog button {
 button:disabled {
   opacity: 0.4;
   cursor: not-allowed;
+}
+
+.eyebrow {
+  font-family: "Courier New", monospace;
+}
+.hero {
+  background-image: radial-gradient(
+    ellipse at right,
+    #b577170c,
+    transparent 70%
+  );
+}
+.hero-copy {
+  max-width: 470px;
+  font-size: 18px;
+}
+.hero-copy #name {
+  font-weight: 700;
+}
+.hero-copy #role {
+  display: block;
+  margin-top: 3px;
+  color: var(--muted);
+  font-size: 15px;
+}
+.hero h1 {
+  letter-spacing: -0.05em;
+}
+.empty-state {
+  position: relative;
+  border-style: solid;
+  border-left: 3px solid var(--accent);
+}
+.empty-state::after {
+  content: "";
+  position: absolute;
+  width: 65px;
+  height: 6px;
+  top: 0;
+  right: 20px;
+  background: repeating-linear-gradient(
+    135deg,
+    var(--accent) 0 3px,
+    transparent 3px 7px
+  );
+  opacity: 0.5;
+}
+.tag {
+  font-family: "Courier New", monospace;
+}
+.project-visual {
+  background-image:
+    linear-gradient(#ffffff05 1px, transparent 1px),
+    linear-gradient(90deg, #ffffff05 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+.contact-section {
+  background: radial-gradient(ellipse at right, #b577171a, transparent 65%);
+}
+@media (max-width: 430px) {
+  header {
+    gap: 15px;
+  }
+  .brand {
+    max-width: 130px;
+  }
+  .drawing-title {
+    font-size: 9px;
+  }
+  .control-figure figcaption {
+    letter-spacing: 0;
+    font-size: 8px;
+  }
 }

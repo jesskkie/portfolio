@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 480" fill="none">
+  <defs>
+    <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M20 0H0V20" stroke="#ffffff" stroke-opacity=".055" stroke-width=".7"/></pattern>
+    <linearGradient id="steel" x2="1" y2="1"><stop stop-color="#353e44"/><stop offset="1" stop-color="#242c32"/></linearGradient>
+    <pattern id="vents" width="8" height="6" patternUnits="userSpaceOnUse"><path d="M1 2H6" stroke="#67747d" stroke-width="2"/></pattern>
+  </defs>
+  <path fill="#1d2327" d="M0 0H600V480H0z"/>
+  <path fill="url(#grid)" d="M0 0H600V480H0z"/>
+  <g stroke="#64717a" stroke-width="1"><path d="M30 37H570M30 443H570M42 25V455M558 25V455" stroke-dasharray="4 6"/></g>
+  <g fill="#b1b9be" font-family="monospace" font-size="10" letter-spacing="1"><text x="57" y="30">01</text><text x="202" y="30">02</text><text x="380" y="30">03</text><text x="525" y="30">04</text></g>
+  <!-- Cabinet outline and DIN rails -->
+  <rect x="155" y="66" width="367" height="300" rx="3" stroke="#8b969d" stroke-width="1.4" fill="#20272b"/>
+  <path d="M172 111H505M172 119H505M172 260H505M172 268H505" stroke="#65717a" stroke-width="3"/>
+  <g fill="#151b1f" stroke="#8b969d"><circle cx="165" cy="76" r="2"/><circle cx="512" cy="76" r="2"/><circle cx="165" cy="356" r="2"/><circle cx="512" cy="356" r="2"/></g>
+  <text x="173" y="92" fill="#b1b9be" font-family="monospace" font-size="11" letter-spacing="1">CONTROL CABINET</text>
+  <!-- Sensor / field device -->
+  <rect x="54" y="154" width="65" height="68" rx="2" stroke="#9ca7ae" fill="url(#steel)"/>
+  <circle cx="86" cy="183" r="12" stroke="#ffc071" stroke-width="1.5"/>
+  <circle cx="86" cy="183" r="4" fill="#ffc071"/>
+  <path d="M71 220V234H101V220" stroke="#8b969d"/>
+  <text x="55" y="251" fill="#d9dee1" font-family="monospace" font-size="12">SENSOR</text>
+  <text x="55" y="267" fill="#9ca7ae" font-family="monospace" font-size="10">FIELD INPUT</text>
+  <!-- Controller, main module, I/O -->
+  <rect x="183" y="128" width="105" height="111" rx="2" fill="url(#steel)" stroke="#9ca7ae"/>
+  <rect x="193" y="141" width="85" height="32" fill="#172024" stroke="#62727c"/>
+  <path d="M201 151H224M201 161H242" stroke="#ffc071" stroke-width="2"/>
+  <circle cx="267" cy="152" r="2.5" fill="#ffc071"/>
+  <text x="196" y="195" fill="#f2f0e9" font-family="monospace" font-weight="bold" font-size="19">PLC</text>
+  <rect x="193" y="208" width="85" height="18" fill="url(#vents)"/>
+  <rect x="294" y="128" width="44" height="111" rx="1" fill="#2b343a" stroke="#8b969d"/>
+  <g fill="#ffc071"><circle cx="305" cy="143" r="2"/><circle cx="316" cy="143" r="2"/><circle cx="327" cy="143" r="2"/></g>
+  <path d="M304 157H328M304 166H328M304 175H328M304 184H328M304 193H328M304 202H328M304 211H328M304 220H328" stroke="#71818b" stroke-width="3"/>
+  <!-- Motor drive -->
+  <rect x="385" y="128" width="105" height="111" rx="2" fill="url(#steel)" stroke="#9ca7ae"/>
+  <rect x="396" y="140" width="83" height="28" fill="#172024" stroke="#62727c"/>
+  <path d="M405 155H417L423 147L431 160L437 152H470" stroke="#ffc071"/>
+  <text x="397" y="191" fill="#f2f0e9" font-family="monospace" font-weight="bold" font-size="17">DRIVE</text>
+  <rect x="396" y="204" width="83" height="22" fill="url(#vents)"/>
+  <!-- Terminal blocks -->
+  <g fill="#39454d" stroke="#8b969d"><rect x="184" y="288" width="18" height="44"/><rect x="203" y="288" width="18" height="44"/><rect x="222" y="288" width="18" height="44"/><rect x="241" y="288" width="18" height="44"/><rect x="260" y="288" width="18" height="44"/></g>
+  <g fill="#d1d7db"><circle cx="193" cy="299" r="2"/><circle cx="212" cy="299" r="2"/><circle cx="231" cy="299" r="2"/><circle cx="250" cy="299" r="2"/><circle cx="269" cy="299" r="2"/></g>
+  <text x="294" y="315" fill="#b1b9be" font-family="monospace" font-size="11">FIELD TERMINALS</text>
+  <!-- Concept signal routing -->
+  <g stroke="#ffc071" stroke-width="2"><path d="M119 188H145V278H193V288M231 288V252H235V239M338 183H385M437 239V386H353"/></g>
+  <g fill="#ffc071"><circle cx="145" cy="278" r="3"/><circle cx="235" cy="252" r="3"/><circle cx="437" cy="386" r="3"/></g>
+  <!-- Motor cross section symbol and mounting feet -->
+  <rect x="264" y="371" width="59" height="44" rx="4" fill="url(#steel)" stroke="#9ca7ae"/>
+  <circle cx="327" cy="393" r="27" fill="#293239" stroke="#9ca7ae" stroke-width="1.5"/>
+  <circle cx="327" cy="393" r="17" stroke="#ffc071"/>
+  <text x="319" y="400" fill="#ffc071" font-family="monospace" font-size="22">M</text>
+  <path d="M272 380V406M281 380V406M290 380V406M299 380V406M306 416V423H344V416M354 392H376" stroke="#89969e"/>
+  <text x="389" y="421" fill="#d9dee1" font-family="monospace" font-size="12">ELECTRIC MOTOR</text>
+  <text x="55" y="423" fill="#9ca7ae" font-family="monospace" font-size="10" letter-spacing="1">INPUT / LOGIC / OUTPUT</text>
+</svg>

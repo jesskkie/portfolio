@@ -1,0 +1,19 @@
+INDUSTRIAL AUTOMATION THEME UPDATE — WINDOWS
+
+This update changes the website's appearance and wording. It does not change
+your stored projects, certifications, password, or other dashboard content.
+
+1. In the terminal running the old site, press Ctrl+C to stop it.
+2. Download and extract the latest GitHub ZIP into a NEW, separate folder.
+3. In that new folder, copy the entire public folder.
+4. Paste it into your EXISTING website folder (the one containing package.json).
+   Merge folders and choose Replace the files in the destination when prompted.
+5. Keep your existing data folder, node_modules folder, and any .env file.
+   Do not replace the entire existing website folder.
+6. In the terminal at your EXISTING website folder, run:
+   npm.cmd start
+7. Open http://localhost:3000 and press Ctrl+F5 for a fresh page load.
+
+You do not need to install dependencies again or set a new password.
+The dashboard remains at http://localhost:3000/admin.
+Your own saved introduction and other personal details remain editable there.

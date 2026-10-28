@@ -2,6 +2,10 @@
 
 A responsive public portfolio and private, single-owner content dashboard. No invented projects or credentials are included. The starting page has clearly labeled placeholders and empty project/certification states.
 
+## Updating an existing local copy
+
+For the industrial automation theme, follow [UPDATE-THEME.txt](UPDATE-THEME.txt). Copy only the new `public/` folder into the existing project, preserve `data/` and `node_modules/`, then restart and refresh. No database migration or password reset is needed. The design uses an illustrative control cabinet; it does not claim equipment experience or certifications.
+
 ## Stack
 
 Node.js 24, Express, plain browser JavaScript and CSS, SQLite, and local uploads. There is no frontend build step or separately billed database/auth service. SQLite holds drafts, published content, account credentials and persistent sessions. This is designed for **one application instance with a persistent disk**, not ephemeral/serverless hosts or multiple replicas.
