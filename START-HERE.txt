@@ -1,0 +1,18 @@
+LOCAL PREVIEW — JESSE GEORGE'S PORTFOLIO
+
+1. Install Node.js 24 LTS from https://nodejs.org if it is not installed.
+2. Extract this entire archive. Open a terminal in the extracted portfolio folder (the folder containing package.json).
+3. Run: npm ci
+4. To set up dashboard access privately, run: npm run admin:password
+   Choose a password in the terminal; typing is hidden. Username: jesskkie.
+5. Run: npm start
+6. Keep that terminal open. On this SAME computer, open:
+   http://localhost:3000         Public website
+   http://localhost:3000/admin   Private dashboard
+
+Stop the server with Ctrl+C. Restart later with npm start.
+Your local content and files are saved in data/. Do not delete that folder.
+The ZIP contains application source only; no database, sessions, uploads,
+passwords, or node_modules from the cloud environment are included.
+
+This is a local test, not public hosting. See README.md for publishing steps.

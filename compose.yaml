@@ -1,0 +1,42 @@
+services:
+  app:
+    build: .
+    restart: unless-stopped
+    environment:
+      NODE_ENV: production
+      SESSION_SECRET: ${SESSION_SECRET:?Set a random session secret in .env}
+      PUBLIC_ORIGIN: https://${PUBLIC_DOMAIN:?Set PUBLIC_DOMAIN}
+      ADMIN_ORIGIN: https://${DASHBOARD_DOMAIN:?Set DASHBOARD_DOMAIN}
+    volumes:
+      - portfolio_data:/app/data
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "node",
+          "-e",
+          "fetch('http://127.0.0.1:3000/api/content').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))",
+        ]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+  web:
+    image: caddy:2-alpine
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    environment:
+      PUBLIC_DOMAIN: ${PUBLIC_DOMAIN}
+      DASHBOARD_DOMAIN: ${DASHBOARD_DOMAIN}
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data
+      - caddy_config:/config
+    depends_on:
+      app:
+        condition: service_healthy
+volumes:
+  portfolio_data:
+  caddy_data:
+  caddy_config:
